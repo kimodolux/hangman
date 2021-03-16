@@ -31,7 +31,7 @@ fn draw_hangman(count: u32) {
      __________
       |        |
       0        |
-     /|        |
+      |        |
                |
                |
                |
@@ -42,7 +42,7 @@ fn draw_hangman(count: u32) {
      __________
       |        |
       0        |
-     /|\\       |
+     /|        |
                |
                |
                |
@@ -54,13 +54,24 @@ fn draw_hangman(count: u32) {
       |        |
       0        |
      /|\\       |
-    /          |
+               |
                |
                |
                |
     ============
         "),
         6 => println!("
+     __________
+      |        |
+      0        |
+     /|\\       |
+     /         |
+               |
+               |
+               |
+    ============
+        "),
+        7 => println!("
       __________
       |        |
       0        |
@@ -102,8 +113,9 @@ fn main() {
             println!("Yay you win, the word was {}", word);
             break;
         }
-        if wrong_count >= 6 {
+        if wrong_count >= 7 {
             println!("Game over :(");
+            println!("The word was {}", word);
             break;
         }
 
